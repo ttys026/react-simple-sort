@@ -1,0 +1,36 @@
+{
+  "name": "react-simple-sort",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "rimraf dist && vite build --outDir dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ttys026/react-simple-sort.git"
+  },
+  "author": "troy.lty <litianyi.troy@bytedance.com> (https://github.com/ttys026)",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.es.js",
+  "main": "dist/index.cjs.js",
+  "engines": {
+    "node": ">=14"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.10",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@types/node": "^20.10.5",
+    "@types/react": "^18.0.33",
+    "rimraf": "^4.4.1",
+    "typescript": "^5.0.4",
+    "vite": "^4.2.1",
+    "vite-plugin-dts": "^3.6.4",
+    "vite-tsconfig-paths": "^4.2.1"
+  },
+  "peerDependencies": {
+    "react": "*"
+  }
+}
