@@ -3,6 +3,7 @@ import { resolve } from "path";
 import dts from "vite-plugin-dts";
 import tsConfigPaths from "vite-tsconfig-paths";
 import { getBabelOutputPlugin } from "@rollup/plugin-babel";
+import * as packageJson from "./package.json";
 
 const libConfig = defineConfig({
   plugins: [
@@ -24,6 +25,9 @@ const libConfig = defineConfig({
       name: "reactSimpleSort",
       formats: ["es", "cjs"],
       fileName: (format, entryName) => `${entryName}.${format}.js`,
+    },
+    rollupOptions: {
+      external: [...Object.keys(packageJson.peerDependencies)],
     },
   },
 });
