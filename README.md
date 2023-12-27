@@ -23,8 +23,8 @@ npm install react-simple-sort
 ### Example
 
 ```jsx
-import React from "react";
-import { Sortable } from "react-simple-sort";
+import React from 'react';
+import { Sortable } from 'react-simple-sort';
 
 const App = () => {
   return (
@@ -41,7 +41,7 @@ export default App;
 
 ## Notes
 
-- This library is optimized for simplicity and may not be suitable for projects requiring advanced features like flip animations or virtual list support. Perfect for scenarios where you need a basic sorting functionality without unnecessary extras.
+- This library is optimized for simplicity and may not be suitable for projects requiring advanced features like flip animations, sort on mobile or virtual list support. Perfect for scenarios where you need a basic sorting functionality without unnecessary extras.
 
 - Designed for modern browsers by using [HTML Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API). Please make sure it meets your requirement.
 
