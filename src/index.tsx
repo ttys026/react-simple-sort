@@ -12,11 +12,11 @@ const createClone = (element: HTMLElement) => {
   Array.from(styles).forEach((key) =>
     clone.style.setProperty(key, styles.getPropertyValue(key), styles.getPropertyPriority(key))
   );
+  clone.style.position = 'absolute';
+  clone.style.top = '0';
+  clone.style.left = '0';
   document.body.appendChild(clone);
-  return {
-    element: clone,
-    destroy: () => clone.remove(),
-  };
+  return clone;
 };
 
 const setDraggingShadow = (params: { origin: HTMLElement; clone: HTMLElement; e: React.DragEvent<HTMLDivElement> }) => {
@@ -61,12 +61,8 @@ export const Sortable: React.FC<Props> = (props) => {
               draggingIndex.current = index;
               draggingEle.current = e.currentTarget as HTMLDivElement;
               const clone = createClone(draggingEle.current);
-              setDraggingShadow({
-                origin: draggingEle.current,
-                clone: clone.element,
-                e,
-              });
-              requestAnimationFrame(clone.destroy);
+              setDraggingShadow({ origin: draggingEle.current, clone, e });
+              requestAnimationFrame(clone.remove);
               draggingEle.current.style.opacity = '0';
             },
             onDragEnd: () => {
